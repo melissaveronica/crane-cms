@@ -26,6 +26,9 @@ app.use('/api/invoices', invoiceRoutes);
 import dashboardRoutes from './routes/dashboard.js';
 app.use('/api/dashboard', dashboardRoutes);
 
+import meRoutes from './routes/me.js';
+app.use('/api/me', meRoutes);
+
 // routes mount here as you build them
 
 // error handler — MUST be last, and MUST have 4 args or Express ignores it

@@ -2,11 +2,18 @@ import { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
-const NAV = [
+const STAFF_NAV = [
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/clients', label: 'Clients' },
   { to: '/orders', label: 'Orders' },
   { to: '/invoices', label: 'Invoices' },
+];
+const CUSTOMER_NAV = [
+  { to: '/dashboard', label: 'Dashboard' },
+  { to: '/orders', label: 'Orders' },
+  { to: '/invoices', label: 'Invoices' },
+  { to: '/documents', label: 'Documents' },
+  { to: '/profile', label: 'Profile' },
 ];
 
 export default function DashboardLayout() {
@@ -14,6 +21,8 @@ export default function DashboardLayout() {
   const navigate = useNavigate();
   const location = useLocation();
   const [profileOpen, setProfileOpen] = useState(false);
+
+  const NAV = user?.role === 'customer' ? CUSTOMER_NAV : STAFF_NAV;
 
   const handleLogout = () => {
     logout();

@@ -14,6 +14,8 @@ import Invoices from './pages/Invoices';
 import InvoiceForm from './pages/InvoiceForm';
 import InvoiceDetail from './pages/InvoiceDetail';
 import StatementOfAccount from './pages/StatementOfAccount';
+import Documents from './pages/Documents';
+import Profile from './pages/Profile';
 
 export default function App() {
   return (
@@ -36,6 +38,8 @@ export default function App() {
               <Route path="/invoices/new" element={<InvoiceForm />} />
               <Route path="/invoices/:id" element={<InvoiceDetail />} />
               <Route path="/clients/:id/statement" element={<StatementOfAccount />} />
+              <Route path="/documents" element={<Documents />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
           </Route>
 
