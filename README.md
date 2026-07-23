@@ -4,7 +4,8 @@ A crane rental management system — client management, order workflow,
 invoicing, and account statements.
 
 **Modules:** Authentication (role-based approval) · Client Management (CRM)
-· Order Management · Invoicing · Statement of Account.
+· Order Management · Invoicing · Statement of Account · Customer Portal
+· Owner Dashboard.
 
 **Stack:** React (Vite) + Tailwind CSS on the frontend, Node/Express +
 PostgreSQL on the backend.
@@ -12,9 +13,11 @@ PostgreSQL on the backend.
 ## Setup
 
 ```bash
-# 1. Database
+# 1. Database — quickest: restore the ready dump (schema + demo data)
 psql -U postgres -c "CREATE DATABASE crane_cms;"
-psql -U postgres -d crane_cms -f server/schema.sql
+psql -U postgres -d crane_cms -f crane_cms_dump.sql
+
+#    (or build from scratch: server/schema.sql then node src/seed.js)
 
 # 2. Server
 cd server
